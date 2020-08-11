@@ -14,6 +14,8 @@
 #  index_users_on_username  (username) UNIQUE
 #
 class User < ApplicationRecord
+    include Commentable
+
     validates :session_token, presence: true
     validates :username, uniqueness: true, presence: true
     validates :password, length: { minimum: 6, allow_nil: true }

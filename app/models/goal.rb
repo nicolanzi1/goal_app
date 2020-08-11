@@ -17,6 +17,8 @@
 #  index_goals_on_user_id  (user_id)
 #
 class Goal < ApplicationRecord
+    include Commentable
+
     validates :title, presence: true, length: { minimum: 6 }
 
     belongs_to :author,
