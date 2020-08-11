@@ -23,14 +23,6 @@ class User < ApplicationRecord
 
     before_validation :ensure_session_token
 
-    has_many :cheers_given,
-        class_name: :Cheer,
-        foreign_key: :giver_id
-
-    has_many :cheers_received,
-        through: :goals,
-        source: :cheers
-
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
         return nil unless user
@@ -52,7 +44,7 @@ class User < ApplicationRecord
         self.session_token
     end
 
-    def is_password?
+    def is_password?(maybe_password)
         BCrypt::Password.new(self.password_digest).is_password?(maybe_password)
     end
 
