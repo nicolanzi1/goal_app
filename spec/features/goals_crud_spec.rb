@@ -33,7 +33,7 @@ feature "CRUD of goals" do
         scenario "should have a page for updating an existing goal" do
             visit edit_goal_url(goal)
             expect(page).to have_content "Edit Goal"
-            expect(find_filed('Title').value).to eq(goal.title)
+            expect(find_field('Title').value).to eq(goal.title)
         end
 
         scenario "should show the updated goal after changes are saved" do
