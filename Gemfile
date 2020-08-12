@@ -43,6 +43,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'rails-controller-testing'
+  gem 'faker'
 end
 
 group :development do
@@ -64,7 +65,6 @@ group :test do
   gem 'webdrivers', '~> 3.0'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'faker'
   gem 'shoulda-matchers'
   gem 'launchy'
   gem 'guard-rspec'
